@@ -1,7 +1,7 @@
 <template>
     <div class="pt-10 text-white">
         <div class="flex justify-center items-center">
-            <div class="flex flex-col gap-5">
+            <div class="flex flex-col gap-5 ">
                 <div id="input">
                     <y-input @keyup.enter="click" id="todoİnput" v-model="inputvalue" class="text-white w-72 text-center" label="Todo İtem" info>
                     </y-input>
@@ -25,7 +25,7 @@ import MNCard from './MNCard.vue';
 const inputvalue = ref('')
 const todo = ref('')
 const todos = ref([])
-const todoId = ref(0)
+
 
 
 function click() {
@@ -33,15 +33,14 @@ function click() {
         todo.value = inputvalue.value
         todos.value.push(todo.value)
         inputvalue.value = ''
-        localStorage.setItem(todoId.value, todos.value[todoId.value])
-        todoId.value += 1
     }
 }
 function deletee() {
     todos.value = []
     inputvalue.value = ''
-    localStorage.clear()
 }
+
+
 
 </script>
 

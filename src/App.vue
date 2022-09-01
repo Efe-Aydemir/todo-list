@@ -1,12 +1,14 @@
 <template >
   <div>
     <h1 class="text-2xl pt-10 text-white text-center">MN Todo List</h1>
-    <MNtodo />
+    <!-- <MNtodo /> -->
+    <MNLoginPage />
   </div>
 </template>
 
 <script setup>
-import MNtodo from './component/MNtodo.vue';
+// import MNtodo from './component/MNtodo.vue';
+import MNLoginPage from './component/MNLoginPage.vue';
 </script>
 
 <style>
