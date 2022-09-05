@@ -1,4 +1,5 @@
 <template>
+        <h1 class="text-2xl pt-10 text-white text-center">MN Todo List</h1>
     <div class="pt-10 text-white">
         <div class="flex justify-center items-center">
             <div class="flex flex-col gap-5 ">
