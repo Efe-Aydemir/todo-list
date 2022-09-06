@@ -3,8 +3,8 @@
     <div class="flex justify-center pt-20 items-center">
         <div class="flex flex-col h-96 w-72 bg-gray-800 rounded-md">
             <div id="username" class="flex flex-col gap-5 pt-5 text-center">
-                <label class="text-xl text-white">Username</label>
-                <input type="text" v-model="nameIn" name="name" id="name" class="w-full h-12 border-l-8 border-r-8 transition-all duration-500 bg-black outline-none text-white p-4" :class="namecls" required>
+                <label class="text-xl text-white">Gmail</label>
+                <input type="text" v-model="gmail" name="gmail" id="gmail" class="w-full h-12 border-l-8 border-r-8 transition-all duration-500 bg-black outline-none text-white p-4" :class="namecls" required>
             </div>
             <div id="password" class="flex flex-col gap-5 pt-5 text-center">
                 <label class="text-xl text-white">Password</label>
@@ -18,13 +18,13 @@
 <script setup>
 import {ref, watch} from 'vue'
 import router from '@/router'
-const nameIn = ref('')
+const gmail = ref('')
 const namecls = ref('border-red-600')
 const nameIn2 = ref('')
 const namecls2 = ref('border-red-600')
 
-watch(nameIn, () => {
-    if (nameIn.value.length > 0) {
+watch(gmail, () => {
+    if (gmail.value.length > 0) {
     namecls.value = 'border-green-600'
 } else {
     namecls.value = 'border-red-600'
@@ -41,14 +41,14 @@ watch(nameIn2, () => {
 
 
 function login() {
-    if (nameIn.value.length <= 0 && nameIn2.value.length <= 0){
+    if (gmail.value.length <= 0 && nameIn2.value.length <= 0){
         alert('Lütfen Gerekli Yerleri Doldurunuz')
-    } else if(nameIn.value.length >= 0 && nameIn2.value.length >= 0) {
+    } else if(gmail.value.length >= 0 && nameIn2.value.length >= 0) {
         alert('Giriş Sağlandı')
-        localStorage.setItem('username' , nameIn.value)
+        localStorage.setItem('gmail' , gmail.value)
         localStorage.setItem('passw', nameIn2.value)
         router.push('/todo')
-        nameIn.value = ""
+        gmail.value = ""
         nameIn2.value = ""
     } else {
         window.location.reload()
