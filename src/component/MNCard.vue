@@ -1,7 +1,7 @@
 <template>
   <div v-for="(item, index) in todoList" :key="index">
-    <y-card class="mt-5 mb-5 !w-20 !h-auto">
-      <div class="flex justify-between gap-1 flex-wrap p-3">
+    <y-card class="mt-5 mb-5 !h-auto">
+      <div class="flex justify-between overflow-auto gap-1 flex-wrap p-3">
         <p>{{  item  }}</p>
         <y-button @click="deleteItem(index)" tertiary>🗑️</y-button>
       </div>
